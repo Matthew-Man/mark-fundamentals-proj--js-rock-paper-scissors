@@ -43,12 +43,16 @@ test("isWinningChoice returns true if and only if first argument beats second ar
   expect(isWinningChoice("scissors", "scissors")).toBe(false);
 });
 
-test("makeResultMessage returns a string reporting the result between player and computer", () => {
+test.only("makeResultMessage returns a string reporting the result between player and computer", () => {
   expect(makeResultMessage("rock", "scissors")).toBe(
     "Your rock beat the computer's scissors! You are a mighty champion!"
   );
   expect(makeResultMessage("paper", "rock")).toBe(
     "Your paper beat the computer's rock! You are a mighty champion!"
+  );
+
+  expect(makeResultMessage("scissors", "lizard")).toBe(
+    "Your scissors beat the computer's lizard! You are a mighty champion!"
   );
 
   expect(makeResultMessage("rock", "rock")).toBe(
